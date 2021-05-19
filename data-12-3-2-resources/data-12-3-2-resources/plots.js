@@ -1,6 +1,6 @@
-d3.json("samples.json").then(function(data) {
-    console.log(data);
-  });
+// d3.json("samples.json").then(function(data) {
+//     console.log(data);
+//   });
  
   
 // // to extract only the wfreq
@@ -24,3 +24,10 @@ d3.json("samples.json").then(function(data) {
 // null);
 //     console.log(filteredWfreq);
 // });
+
+// display the metadata of any individual from the dataset
+d3.json("samples.json").then(function(data){
+  firstPerson = data.metadata[0];
+  Object.entries(firstPerson).forEach(([key, value]) =>
+    {console.log(key + ': ' + value);});
+});
